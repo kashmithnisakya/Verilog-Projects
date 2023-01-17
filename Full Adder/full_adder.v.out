@@ -1,0 +1,57 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001e4c60b66e0 .scope module, "full_adder" "full_adder" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_000001e4c60b3820 .functor OR 1, L_000001e4c60837a0, L_000001e4c60b37b0, C4<0>, C4<0>;
+o000001e4c60b6fd8 .functor BUFZ 1, C4<z>; HiZ drive
+v000001e4c60b2490_0 .net "A", 0 0, o000001e4c60b6fd8;  0 drivers
+o000001e4c60b7008 .functor BUFZ 1, C4<z>; HiZ drive
+v000001e4c60b2530_0 .net "B", 0 0, o000001e4c60b7008;  0 drivers
+o000001e4c60b7158 .functor BUFZ 1, C4<z>; HiZ drive
+v000001e4c60b25d0_0 .net "Cin", 0 0, o000001e4c60b7158;  0 drivers
+v000001e4c60b2670_0 .net "Cout", 0 0, L_000001e4c60b3820;  1 drivers
+v000001e4c60b3340_0 .net "D1", 0 0, L_000001e4c60837a0;  1 drivers
+v000001e4c60b2f80_0 .net "D2", 0 0, L_000001e4c60b37b0;  1 drivers
+v000001e4c60b3520_0 .net "S", 0 0, L_000001e4c606c590;  1 drivers
+v000001e4c60b2a80_0 .net "S1", 0 0, L_000001e4c6083640;  1 drivers
+S_000001e4c60b6870 .scope module, "HF1" "half_adder" 2 10, 2 17 0, S_000001e4c60b66e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /OUTPUT 1 "S";
+    .port_info 3 /OUTPUT 1 "C";
+L_000001e4c6083640 .functor XOR 1, o000001e4c60b6fd8, o000001e4c60b7008, C4<0>, C4<0>;
+L_000001e4c60837a0 .functor AND 1, o000001e4c60b6fd8, o000001e4c60b7008, C4<1>, C4<1>;
+v000001e4c6082d20_0 .net "A", 0 0, o000001e4c60b6fd8;  alias, 0 drivers
+v000001e4c606c3b0_0 .net "B", 0 0, o000001e4c60b7008;  alias, 0 drivers
+v000001e4c606c450_0 .net "C", 0 0, L_000001e4c60837a0;  alias, 1 drivers
+v000001e4c606c4f0_0 .net "S", 0 0, L_000001e4c6083640;  alias, 1 drivers
+S_000001e4c60b2080 .scope module, "HF2" "half_adder" 2 11, 2 17 0, S_000001e4c60b66e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /OUTPUT 1 "S";
+    .port_info 3 /OUTPUT 1 "C";
+L_000001e4c606c590 .functor XOR 1, L_000001e4c6083640, o000001e4c60b7158, C4<0>, C4<0>;
+L_000001e4c60b37b0 .functor AND 1, L_000001e4c6083640, o000001e4c60b7158, C4<1>, C4<1>;
+v000001e4c60b2210_0 .net "A", 0 0, L_000001e4c6083640;  alias, 1 drivers
+v000001e4c60b22b0_0 .net "B", 0 0, o000001e4c60b7158;  alias, 0 drivers
+v000001e4c60b2350_0 .net "C", 0 0, L_000001e4c60b37b0;  alias, 1 drivers
+v000001e4c60b23f0_0 .net "S", 0 0, L_000001e4c606c590;  alias, 1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "full_adder.v";
